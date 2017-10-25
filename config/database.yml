@@ -1,0 +1,7 @@
+development:
+  adapter: mysql2
+  dataserver: localhost
+  database: bookworms_dev
+  username: admin
+  password: 
+  
