@@ -1,24 +1,9 @@
-# README
+1 - User Authentication -> Devise
+2 - User profile creation
+3 - Admin privilages
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+MOdels
+- User
+- Post
+- Book
+- Genre
