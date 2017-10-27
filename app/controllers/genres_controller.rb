@@ -23,6 +23,16 @@ class GenresController < ApplicationController
 	def show		
 	end
 
+	def mark_favorite
+		@genre = Genre.find_by_id params[:id]
+		@response = @genre.favorite(current_user) ? "Remove Favorite" : "Mark Favorite"
+		
+		respond_to do |format|
+			format.json
+			format.html
+		end
+	end
+
 	private
 	def genre_params
 		params.require(:genre).permit(:name, :description)

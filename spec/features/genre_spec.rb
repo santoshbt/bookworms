@@ -2,15 +2,31 @@ require 'rails_helper'
 
 describe 'navigate' do
 	describe 'index' do
-		it 'can be reached successfully' do
+		before do
 			visit genres_path
+		end
+
+		it 'can be reached successfully' do			
 			expect(page.status_code).to eq(200)
 		end
 
-		it 'has a name of genres' do
-			visit genres_path
+		it 'has a name of genres' do			
 			expect(page).to have_content(/Genres/)
 		end
+
+		# it 'user click the link Mark Favorite' do
+		# 	user = FactoryGirl.create(:user)	
+		# 	login_as(user, scope: :user)
+
+		# 	genre_to_mark_favorite = Genre.create(name: 'Fiction', description: 'Fictitious books')
+
+		# 	visit genres_path
+		# 	click_link("favorite_#{genre_to_mark_favorite.id}")	
+		# 	# reload_page
+		# 	# expect(page).to have_css('#favorite_#{genre_to_mark_favorite.id}', text: 'Remove Favorite')
+								
+		# 	expect(page).to have_content(/Remove Favorite/)
+		# end
 	end
 
 	describe 'creation' do
