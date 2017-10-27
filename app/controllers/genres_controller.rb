@@ -1,11 +1,13 @@
-class GenresController < ApplicationController
+class GenresController < ApplicationController	
+	before_action :is_admin?, only: ['new', 'create']
 	before_action :set_genre, only: ['show']
 
 	def index
+		@genres = Genre.all
 	end
 
-	def new
-		@genre = Genre.new
+	def new		
+		@genre = Genre.new		
 	end
 
 	def create		
@@ -14,7 +16,7 @@ class GenresController < ApplicationController
 		if @genre.save
 			redirect_to @genre, notice: "Your post was created successfully"
 		else
-			render :new
+			render :new, alert: "Sorry there was some problem while creating the genre"	
 		end	
 	end
 

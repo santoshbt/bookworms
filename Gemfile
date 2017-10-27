@@ -29,6 +29,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
+gem "rb-inotify", "~> 0.9.0"
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # Use Redis adapter to run Action Cable in production
@@ -44,6 +45,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0'
   gem 'capybara'
   gem 'database_cleaner'
+  gem 'factory_girl_rails', '~> 4.7'
 end
 
 group :development do
