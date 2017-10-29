@@ -23,10 +23,12 @@
 		<td>
 			<%= genre.description %>
 		</td>
-		<td>
-			<%= link_to 'Mark Favorite', mark_favorite_genre_path(genre.id), 
-									id:"favorite_#{genre.id}", remote: true %>
-		</td>
+		<% if current_user %>
+			<td>
+				<%= link_to 'Mark Favorite', mark_favorite_genre_path(genre.id), 
+										id:"favorite_#{genre.id}", remote: true %>
+			</td>
+		<% end %>
 	</tr>
 	<% end %>
 </table>

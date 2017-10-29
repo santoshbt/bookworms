@@ -14,6 +14,8 @@ describe 'navigate' do
 			expect(page).to have_content(/Genres/)
 		end
 
+		#### Not able to test the ajax request. Throwing unsupported format error.
+
 		# it 'user click the link Mark Favorite' do
 		# 	user = FactoryGirl.create(:user)	
 		# 	login_as(user, scope: :user)
@@ -48,14 +50,11 @@ describe 'navigate' do
 			visit(new_genre_path)
 
 			expect(page.status_code).to eq(200)
+			fill_in 'genre[name]', with: "Comedy", visible: false	
+			fill_in 'genre[description]', with: "Includes books with good humour"	    
+		    click_on "Save"
+
+		    expect(page).to have_content("Comedy")
 		end
-
-		# it 'can be created from new form page' do			
-		# 	fill_in 'genre[name]', with: "Comedy", visible: false	
-		# 	fill_in 'genre[description]', with: "Includes books with good humour"	    
-		#     click_on "Save"
-
-		#     expect(page).to have_content("Comedy")
-		# end
 	end
 end
