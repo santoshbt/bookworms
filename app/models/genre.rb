@@ -6,8 +6,11 @@ class Genre < ApplicationRecord
 
 	def favorite(user)
 		unless user.blank?
-			favorite_genres.build(user: user)
-			save				
+			existing_favorite_genre = favorite_genres.where(user: user)
+			if existing_favorite_genre.count == 0
+				favorite_genres.build(user: user)
+				save		
+			end			
 		else
 			false
 		end

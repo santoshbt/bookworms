@@ -25,11 +25,16 @@ class GenresController < ApplicationController
 
 	def mark_favorite
 		@genre = Genre.find_by_id params[:id]
-		@response = @genre.favorite(current_user) ? "Remove Favorite" : "Mark Favorite"
-		
-		respond_to do |format|
-			format.json
-			format.html
+		@response = @genre.favorite(current_user) ? "Remove Favorite" : "Mark Favorite"		
+	end
+
+	def remove_favorite
+		fav_genre = current_user.favorite_genres.where(genre_id: params[:id]).first
+		@genre_id =  params[:id]
+		if fav_genre.destroy
+			@response = "Mark Favorite"
+		else
+			@response = "Remove Favorite"
 		end
 	end
 

@@ -24,7 +24,7 @@ describe 'navigate' do
 
 		# 	visit genres_path
 		# 	click_link("favorite_#{genre_to_mark_favorite.id}")	
-		# 	# reload_page
+		# 	reload_page
 		# 	# expect(page).to have_css('#favorite_#{genre_to_mark_favorite.id}', text: 'Remove Favorite')
 								
 		# 	expect(page).to have_content(/Remove Favorite/)

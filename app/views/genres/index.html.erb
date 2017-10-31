@@ -25,8 +25,14 @@
 		</td>
 		<% if current_user %>
 			<td>
-				<%= link_to 'Mark Favorite', mark_favorite_genre_path(genre.id), 
+			    <% if already_my_favorite(genre.id) %>
+			    	<%= link_to 'Remove Favorite', remove_favorite_genre_path(genre.id), 
+										id:"unfavorite_#{genre.id}", remote: true %>
+			    <% else %>
+			    	<%= link_to 'Mark Favorite', mark_favorite_genre_path(genre.id), 
 										id:"favorite_#{genre.id}", remote: true %>
+			    <% end %>
+				
 			</td>
 		<% end %>
 	</tr>
