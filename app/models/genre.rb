@@ -3,6 +3,7 @@ class Genre < ApplicationRecord
 
 	has_many :favorite_genres
 	has_many :users, through: :favorite_genres
+	has_many :books
 
 	def favorite(user)
 		unless user.blank?
