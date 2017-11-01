@@ -4,7 +4,6 @@ MOdels
 - Book
 - Genre
 
-
 Completed
 
 1 - User Authentication -> Devise
@@ -22,7 +21,4 @@ To Do
 2 - Post/edit/delete comments
 3 - User can see other's profiles
 4 - search other users
-
-
-
 

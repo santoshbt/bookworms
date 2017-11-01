@@ -17,10 +17,8 @@ class BooksController < ApplicationController
 
 		if @book.save
 			redirect_to genre_book_path(@genre, @book), notice: "Your post was created successfully"
-		else
-			render :new, alert: "Sorry there was some problem while creating the genre"	
-		end	
-	end
+		end		
+	end	
 
 	private
 	def book_params
