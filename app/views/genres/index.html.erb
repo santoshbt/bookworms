@@ -1,0 +1,45 @@
+<style type="text/css">
+	table, th, td {
+	    border: 1px solid black;
+	}
+</style>
+
+<h1>Genres</h1>
+
+<table style="width:50%">
+	<tr>
+		<th>
+			Name
+		</th>
+		<th>
+			Description
+		</th>
+	</tr>
+	<% @genres.each do |genre| %>
+	<tr>
+		<td>
+			<%= genre.name %>
+		</td>
+		<td>
+			<%= genre.description %>
+		</td>
+		<% if current_user %>
+		<td>
+		    <% if is_admin? %>
+		    	<%= link_to "Add Books", new_genre_book_path(genre.id) %>
+		    <% else %>				
+			    <% if already_my_favorite(genre.id) %>
+			    	<%= link_to 'Remove Favorite', remove_favorite_genre_path(genre.id), 
+										id:"unfavorite_#{genre.id}", remote: true %>
+			    <% else %>
+			    	<%= link_to 'Mark Favorite', mark_favorite_genre_path(genre.id), 
+										id:"favorite_#{genre.id}", remote: true %>
+			    <% end %>						
+			<% end %>
+		</td>
+		<% end %>
+	</tr>
+	<% end %>
+</table>
+
+	

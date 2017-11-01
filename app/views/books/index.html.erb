@@ -1,0 +1,30 @@
+<style type="text/css">
+	table, th, td {
+	    border: 1px solid black;
+	}
+</style>
+
+<h1>Genres</h1>
+
+<table style="width:50%">
+	<tr>
+		<th>
+			Title 
+		</th>
+		<th>
+			Author Name
+		</th>
+	</tr>
+	<% @books.each do |book| %>
+	<tr>
+		<td>
+			<%= book.title %>
+		</td>
+		<td>
+			<%= book.author_name %>
+		</td>	
+	</tr>
+	<% end %>
+</table>
+
+	
