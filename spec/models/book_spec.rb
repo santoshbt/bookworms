@@ -5,7 +5,6 @@ RSpec.describe Book, type: :model do
 		before do						
 			@genre = FactoryGirl.create(:genre)
 			@book = Book.create(title: "My Comedy Series", author_name: "Jon Paul", genre_id: @genre.id)
-			puts @book.inspect
 		end
 
 		it 'can be created' do

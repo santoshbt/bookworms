@@ -1,1 +1,6 @@
-<%= @genre.inspect %>
+<br />
+
+
+<%= @genre.name %>
+<%= link_to "View Books", genre_books_path(genre_id: @genre.id) %>
+

@@ -1,7 +1,7 @@
 FactoryGirl.define do
   factory :genre do
-    name 'Fiction'
-    description 'It contains fictional books'
+    name 'Comedy'
+    description 'It contains comedy books'
   end
 end
 

@@ -3,6 +3,7 @@ class BooksController < ApplicationController
 	before_action :set_book, only: ['show']
 
 	def index
+		@genre = Genre.select(:id, :name).find_by_id(params[:genre_id])
 		@books = Book.all
 	end
 

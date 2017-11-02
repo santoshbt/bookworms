@@ -9,7 +9,7 @@
   </head>
 
   <body>
-  	<head>  		
+  	<head>  		  
   		<% if current_user %>
   			<%= link_to "Log Out", destroy_user_session_path, method: :delete   %>
   		<% else %>
@@ -17,6 +17,9 @@
   			<%= link_to "Sign Up", new_user_registration_path   %>
         <%#= link_to "Sign in with Google",  user_google_oauth2_omniauth_callback_path %>        
   		<% end %>	
+        <br /><br />
+        <%= flash[:alert] %>
+        <%= flash[:notice] %> <br />
   	</head>
     <%= yield %>
   </body>
