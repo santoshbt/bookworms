@@ -12,6 +12,7 @@ class User < ApplicationRecord
   has_many :favorite_genres
   has_many :genres, through: :favorite_genres
   has_and_belongs_to_many :oauth_credentials
+  has_many :ratings, dependent: :destroy
 
 
   def self.from_omniauth(auth)
