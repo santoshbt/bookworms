@@ -14,4 +14,9 @@ class ApplicationController < ActionController::Base
   		end	
   	end
   end
+
+  def user_signed_in?
+    current_user.blank? ? false : true
+  end
+
 end

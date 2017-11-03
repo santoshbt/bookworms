@@ -1,5 +1,4 @@
 Rails.application.routes.draw do    
-  resources :books
   devise_for :users, :controllers => {registrations: 'registrations',
   									   omniauth_callbacks: "callbacks" }  
 
@@ -8,7 +7,9 @@ Rails.application.routes.draw do
   		get 'mark_favorite'
   		get 'remove_favorite'      
   	end
-    resources :books
+    resources :books do
+      resources :reviews
+    end
   end
 
   resources :ratings, only: :update

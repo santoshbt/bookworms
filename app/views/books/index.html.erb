@@ -19,7 +19,7 @@
 		<% unless book.try(:title).blank? %>
 			<tr>
 				<td>
-					<%= link_to book.title, book_path(book.id) %>
+					<%= link_to book.title, genre_book_path(@genre.id, book.id) %>
 				</td>
 				<td>
 					<%= book.author_name %>
