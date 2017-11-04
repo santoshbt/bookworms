@@ -24,6 +24,8 @@ class ReviewsController < ApplicationController
 
 	def show
 		@review = Review.find params[:id]
+		@comment = Comment.new
+		@review_comments = @review.comments.order("created_at desc")
 	end
 
 

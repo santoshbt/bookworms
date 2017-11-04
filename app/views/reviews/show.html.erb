@@ -1,1 +1,8 @@
-<%= @review.inspect %>
+<p><b><%= @review.title %></b></p>
+
+<p><%= @review.description %> </p>
+
+<%= render partial: "comments/form",  locals: {comment: @comment,
+										commentable_id:  @review.id,
+										commentable_type: "Review",
+										review_comments: @review_comments} %>

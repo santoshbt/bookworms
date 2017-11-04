@@ -28,4 +28,8 @@ class User < ApplicationRecord
       end
       user
     end
+
+    def full_name
+      first_name + " " + last_name rescue "Guest user"
+    end
   end

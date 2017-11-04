@@ -1,0 +1,8 @@
+<% result_text = @success ? 'Comment Submitted' : 
+							'Sorry, comment is not submitted. Please try again' %>
+
+$("span.comment_result").html("<%= result_text %>")
+<% if @success %>	
+	$( "div.user_comments" ).eq(0)
+			.prepend("<%= escape_javascript(render :partial => 'comment', :locals => {:content => @comment.content, :comment_created => @comment.created_at}) %>")
+<% end %>

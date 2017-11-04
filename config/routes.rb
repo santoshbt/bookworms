@@ -1,4 +1,5 @@
 Rails.application.routes.draw do    
+  resources :comments
   devise_for :users, :controllers => {registrations: 'registrations',
   									   omniauth_callbacks: "callbacks" }  
 
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   		get 'remove_favorite'      
   	end
     resources :books do
-      resources :reviews
+      resources :reviews            
     end
   end
 

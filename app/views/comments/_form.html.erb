@@ -1,0 +1,16 @@
+<%= form_for @comment, :remote => true do |f| %> 
+	<%= f.text_area 'content' %>
+	<%= f.hidden_field "commentable_id", value: commentable_id %>
+	<%= f.hidden_field "commentable_type", value: commentable_type %>
+	<%= f.submit %>
+<% end %>
+
+<span class="comment_result"></span>
+<div class="user_comments">		
+	<% review_comments.each do |comment| %>			
+		<%= user_info(comment.created_at) %> <br />
+		<span><%= comment.content %></span>			
+		<hr />		
+	<% end %>					
+</div>
+
