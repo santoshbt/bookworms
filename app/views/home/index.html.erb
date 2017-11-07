@@ -1,4 +1,9 @@
 
-
-
 <h1> Welcome to BookWorms Store</h1>
+
+<br />
+<%= link_to "Genres", genres_path %> 
+
+<% unless current_user.blank? %>
+	<%= link_to "Profile", user_path(id: current_user.id) %>
+<% end %>	

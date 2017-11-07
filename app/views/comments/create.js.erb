@@ -4,5 +4,5 @@
 $("span.comment_result").html("<%= result_text %>")
 <% if @success %>	
 	$( "div.user_comments" ).eq(0)
-			.prepend("<%= escape_javascript(render :partial => 'comment', :locals => {:content => @comment.content, :comment_created => @comment.created_at}) %>")
+			.prepend("<%= escape_javascript(render :partial => 'comment', :locals => {:content => @comment.content, :comment_created => @comment.created_at, :commenter => @comment.user}) %>")
 <% end %>

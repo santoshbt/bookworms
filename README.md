@@ -15,11 +15,14 @@ Completed
 6 - Persisting the text for Favorite / Unfavorite
 7 - Remove favorite 
 8 - Added Rating and Average ratings to books
+9 - Post/edit/delete review
+10 - User can see other's profiles
+11 - Upload user profile pic
 
 To Do    
 
-1 - Post/edit/delete review
+1 - 
 2 - Post/edit/delete comments
-3 - User can see other's profiles
+3 - 
 4 - search other users
 

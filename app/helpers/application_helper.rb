@@ -7,8 +7,13 @@ module ApplicationHelper
 		create_date.to_date.strftime("%m/%d/%Y")
 	end
 
-	def user_info(comment_created_at)		
-		details = current_user.full_name + ' ' + readable_date(comment_created_at)
+	def user_info(comment_created_at, user)
+		unless user.blank?	
+			link_to_user_profile = link_to(user.full_name, user_path(id: user.id))	
+		else
+			link_to_user_profile = "Guest User"
+		end	
+		details = link_to_user_profile + ' ' + readable_date(comment_created_at)
 		content_tag(:p, content_tag(:span, details.html_safe))
 	end
 

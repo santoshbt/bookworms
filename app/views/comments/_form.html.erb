@@ -8,7 +8,7 @@
 <span class="comment_result"></span>
 <div class="user_comments">		
 	<% review_comments.each do |comment| %>			
-		<%= user_info(comment.created_at) %> <br />
+		<%= user_info(comment.created_at, comment.user) %> <br />
 		<span><%= comment.content %></span>			
 		<hr />		
 	<% end %>					

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   end
 
   resources :ratings, only: :update
+  resources :users, only: [:edit, :show]  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'home#index'
