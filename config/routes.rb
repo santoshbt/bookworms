@@ -9,12 +9,15 @@ Rails.application.routes.draw do
   		get 'remove_favorite'      
   	end
     resources :books do
-      resources :reviews            
+      resources :reviews       
     end
   end
 
   resources :ratings, only: :update
   resources :users, only: [:edit, :show]  
+
+  post 'search/books', to: 'search#book_search'
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root to: 'home#index'

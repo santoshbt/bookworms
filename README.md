@@ -21,8 +21,5 @@ Completed
 
 To Do    
 
-1 - 
-2 - Post/edit/delete comments
-3 - 
-4 - search other users
+4 - search other users - Adding sunspot_rails
 

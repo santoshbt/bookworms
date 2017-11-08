@@ -32,6 +32,8 @@ gem 'devise'
 gem "rb-inotify", "~> 0.9.0"
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
+gem 'sunspot_rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
@@ -54,9 +56,10 @@ group :development do
   gem 'listen', '~> 3.0.5'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-
+  gem 'spring-watcher-listen', '~> 2.0.0'    
+  gem 'sunspot_solr.gem', path: '/home/santoshbt/bookworms/'
 end
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
@@ -67,4 +70,3 @@ gem 'figaro'
 gem 'omniauth-google-oauth2'
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 gem "paperclip", "~> 5.0.0"
-
