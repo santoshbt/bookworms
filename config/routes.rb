@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resources :ratings, only: :update
   resources :users, only: [:edit, :show]  
 
+  get 'search', to: 'search#show'
   post 'search/books', to: 'search#search_content'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

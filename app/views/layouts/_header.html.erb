@@ -1,10 +1,7 @@
-<%= link_to "Genres", genres_path %> 
-
-<% unless current_user.blank? %>
-	<%= link_to "Profile", user_path(id: current_user.id) %>
-<% end %>	
-
-<%= form_tag 'search/books', :remote => true  do %>
-	<%= text_field_tag 'search', nil, placeholder: 'Search by genre, book, author' %>
-	<%= submit_tag 'Search' %>
-<% end %>
+ <div class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+			<%= render :partial => 'shared/nav' %>
+		</div>
+	</div>
+</div>

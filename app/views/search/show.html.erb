@@ -1,0 +1,6 @@
+<%= form_tag 'search/books', :remote => true  do %>
+	<%= text_field_tag 'search', nil, placeholder: 'Search by genre, book, author' %>
+	<%= submit_tag 'Search' %>
+<% end %>
+
+<div class="search_results"></div>

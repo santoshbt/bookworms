@@ -17,4 +17,8 @@ module ApplicationHelper
 		content_tag(:p, content_tag(:span, details.html_safe))
 	end
 
+	def active(path)
+		return "active" if current_page?(path)
+	end
+
 end
