@@ -18,8 +18,10 @@ Completed
 9 - Post/edit/delete review
 10 - User can see other's profiles
 11 - Upload user profile pic
+12 - Search Books, based on title, author name, genre -> Used Thinking Sphinx
 
 To Do    
 
-4 - search other users - Adding sunspot_rails
+Need to add bootstrap
+
 

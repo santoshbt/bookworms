@@ -2,13 +2,7 @@
 <h1> Welcome to BookWorms Store</h1>
 
 <br />
-<%= link_to "Genres", genres_path %> 
 
-<% unless current_user.blank? %>
-	<%= link_to "Profile", user_path(id: current_user.id) %>
-<% end %>	
 
-<%= form_tag 'search/books' do %>
-	<%= text_field_tag 'search', nil, placeholder: 'Search by genre, book, author' %>
-	<%= submit_tag 'Search' %>
-<% end %>
+<div class="main">
+</div>
