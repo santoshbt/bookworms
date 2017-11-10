@@ -1,0 +1,20 @@
+<div class="col-xs-4">
+	<%= form_for @comment, :remote => true do |f| %> 
+		<%= f.text_area 'content',  class: "form-control" %>
+		<%= f.hidden_field "commentable_id", value: commentable_id %>
+		<%= f.hidden_field "commentable_type", value: commentable_type %><br />
+		<%= f.submit "Submit", class: "btn btn-success active" %>
+	<% end %>
+</div>
+<br /><br />
+<div class="clear"></div>
+
+<span class="comment_result"></span>
+<div class="user_comments">		
+	<% review_comments.each do |comment| %>			
+		<%= user_info(comment.created_at, comment.user) %> <br />
+		<span><%= comment.content %></span>			
+		<hr />		
+	<% end %>					
+</div>
+

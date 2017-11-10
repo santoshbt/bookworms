@@ -1,0 +1,21 @@
+<% genres.each do |genre| %>
+	<p>Name: <%= link_to genre.name, genre_path(genre.id) %> </p>
+	<p>Description:  <%= genre.description %></p>
+	<span class="edit_btn">
+	<% if current_user %>		
+	    <% if user_is_admin? %>
+	    	<%= link_to "Add Books", new_genre_book_path(genre.id) %></p>
+	    <% else %>				
+		    <% if already_my_favorite(genre.id) %>
+		    	<p><%= link_to 'Remove Favorite', remove_favorite_genre_path(genre.id), 
+									id:"unfavorite_#{genre.id}", remote: true %></p>
+		    <% else %>
+		    	<p><%= link_to 'Mark Favorite', mark_favorite_genre_path(genre.id), 
+									id:"favorite_#{genre.id}", remote: true %></p>
+		    <% end %>						
+		<% end %>
+	<% end %>
+	</span>
+	<hr />
+<% end %>
+

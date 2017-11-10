@@ -6,29 +6,7 @@
 
 <h1>Books in Genre <%= @genre.name %></h1>
 
-<table style="width:50%">
-	<tr>
-		<th>
-			Title 
-		</th>
-		<th>
-			Author Name
-		</th>
-	</tr>
-	<% @books.each do |book| %>
-		<% unless book.try(:title).blank? %>
-			<tr>
-				<td>
-					<%= link_to book.title, genre_book_path(@genre.id, book.id) %>
-				</td>
-				<td>
-					<%= book.author_name %>
-				</td>	
-			</tr>
-		<% end %>
-	<% end %>			
-</table>
-<br />
-<%= link_to "Back", genre_path(id: @genre.id) %>
+<%= render :partial => 'shared/books', :locals => {:books => @books} %>
+
 
 	

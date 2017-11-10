@@ -1,0 +1,19 @@
+<div class="placeIt">
+	<h1> Search results for "<%= params[:search] %>"</h1>
+		<% book_results.each do |result| %>
+			Title: <%= result.title %> <br />
+			Author: <%= result.author_name %> <br />
+			Published on : <%= result.created_at %>
+
+			<hr />
+		<% end %>
+	
+		<% user_results.each do |result| %>
+			Name: <%= link_to result.full_name, user_path(result.id) %> <br />
+			Email: <%= result.email %>
+
+			<hr />
+		<% end %>
+		
+	
+</div>

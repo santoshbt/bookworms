@@ -3,6 +3,7 @@ class Book < ApplicationRecord
 	has_many :ratings, dependent: :destroy
 	has_many :reviews, dependent: :destroy
 	
+	# after_save ThinkingSphinx::RealTime.callback_for(:book)
 
 	def average_rating
 		ratings.sum(:score) / ratings.size

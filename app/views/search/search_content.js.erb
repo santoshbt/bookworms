@@ -1,4 +1,5 @@
-$(".search_results").html("<%= escape_javascript(render :partial => 'book_search', :locals => {:results => @results}) %>")
+$(".search_results").html("<%= escape_javascript(render :partial => 'shared/search', :locals => {:user_results => @user_results,
+																									  :book_results => @book_results }) %>")
 
 
 

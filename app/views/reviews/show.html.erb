@@ -2,7 +2,7 @@
 
 <p><%= @review.description %> </p>
 
-<%= render partial: "comments/form",  locals: {comment: @comment,
+<%= render partial: "shared/comment_form",  locals: {comment: @comment,
 										commentable_id:  @review.id,
 										commentable_type: "Review",
 										review_comments: @review_comments} %>

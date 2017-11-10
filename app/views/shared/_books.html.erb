@@ -1,0 +1,11 @@
+<div class="placeIt">
+	<% books.each do |book| %>
+		<% unless book.try(:title).blank? %>
+			<p> Title: <%= link_to book.title, genre_book_path(@genre.id, book.id) %> </p>
+			<p> Author Name: <%= book.author_name %> </p>
+		<% end %>
+		<hr />	
+	<% end %>
+	<%= link_to "Back", genre_path(id: @genre.id) %>
+</div>
+

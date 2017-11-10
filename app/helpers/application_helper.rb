@@ -12,9 +12,10 @@ module ApplicationHelper
 			link_to_user_profile = link_to(user.full_name, user_path(id: user.id))	
 		else
 			link_to_user_profile = "Guest User"
-		end	
-		details = link_to_user_profile + ' ' + readable_date(comment_created_at)
-		content_tag(:p, content_tag(:span, details.html_safe))
+		end			
+		items = [link_to_user_profile,  readable_date(comment_created_at)]
+		contents = items.map {|item| content_tag(:p, item)}    		
+		content_tag(:span, contents.join("\n").html_safe)
 	end
 
 	def active(path)
