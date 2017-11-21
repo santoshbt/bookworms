@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Bookworms</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Bookworms</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>    
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>    
+</head>
 
-  <body class="container">
-    <div class="row">
-      <div class="col-md-12">
-      	<head>  		
-          <%= render partial: 'layouts/header' %>    		
-            <%= flash[:alert] %>
-            <%= flash[:notice] %> <br />
-      	</head>
-        <%= yield %>
-        <div class="footer">
-          <%= render partial: 'layouts/footer' %>
-        </div>
-      </div>.
+<body class="container">
+  <div class="row">
+    <div class="col-md-12">
+     <head>  		
+      <%= render partial: 'layouts/header' %>    		
+      <% if flash[:notice] %>     
+      <div class="alert alert-success">
+        <%= flash[:notice] %>
+      </div>
+      <% elsif flash[:alert] %>
+      <div class="alert alert-warning">
+        <%= flash[:alert] %>
+      </div>  
+      <% end %>
+    </head>
+    <%= yield %>
+    <div class="footer">
+      <%= render partial: 'layouts/footer' %>
     </div>
-  </body>
+  </div>.
+</div>
+</body>
 </html>

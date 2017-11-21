@@ -4,7 +4,8 @@
 @import "comments.scss";
 
 .custom_nav{
-	margin-top: 29px;
+	margin-top: 35px;
+	background-color: #efefef;
 }
 
 .edit_btn{
@@ -18,4 +19,20 @@
 
 .clear{
 	clear: both;
+}
+
+.alert{
+	border-radius: 4px;
+    margin-bottom: 19px;
+    margin-top: 13px;
+    padding: 14px;	
+}
+
+#error_explanation{
+	border: solid;
+	background: #f0f2ea;
+}
+
+.main{
+	margin-top: 94px;
 }
