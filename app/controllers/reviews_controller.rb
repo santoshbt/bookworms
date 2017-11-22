@@ -28,7 +28,6 @@ class ReviewsController < ApplicationController
 		@review_comments = @review.comments.order("created_at desc")
 	end
 
-
 	private
 
 	def review_params

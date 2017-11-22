@@ -1,17 +1,19 @@
-$('#star').raty({
-  readOnly: true,
-  score: <%= @comment.average_rating %>,
-  path: '/assets'
-});
+<% present @book do |book_presenter| %>
+  $('#star').raty({
+    readOnly: true,
+    score: <%= book_presenter.average_rating %>,
+    path: '/assets'
+  });
 
-$('#user_star').raty({
-  score: <%= @rating.score %>,
-  path: '/assets',
-  click: function(score, evt) {
-    $.ajax({
-      url: '/ratings/' + <%= @rating.id %>,
-      type: 'PATCH',
-      data: { score: score }
-    }).done(function (data){});
-  }
-});
+  $('#user_star').raty({
+    score: <%= @rating.score %>,
+    path: '/assets',
+    click: function(score, evt) {
+      $.ajax({
+        url: '/ratings/' + <%= @rating.id %>,
+        type: 'PATCH',
+        data: { score: score }
+      }).done(function (data){});
+    }
+  });
+<% end %>

@@ -5,15 +5,5 @@ class Genre < ApplicationRecord
 	has_many :users, through: :favorite_genres
 	has_many :books, dependent: :destroy
 
-	def favorite(user)
-		unless user.blank?
-			existing_favorite_genre = favorite_genres.where(user: user)
-			if existing_favorite_genre.count == 0
-				favorite_genres.build(user: user)
-				save		
-			end			
-		else
-			false
-		end
-	end
+	include Favourable
 end

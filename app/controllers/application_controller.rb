@@ -1,6 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery prepend: true
   helper_method :is_admin?
+  
+  def present(object, klass = nil)
+    klass ||= "#{object.class}Presenter".constantize
+    klass.new(object, view_context)
+  end
 
   def is_admin?
   	if current_user.try(:type) == 'AdminUser'
