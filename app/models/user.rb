@@ -21,21 +21,6 @@ class User < ApplicationRecord
 
   # after_save ThinkingSphinx::RealTime.callback_for(:user)
 
+  include Registrable
 
-  def self.from_omniauth(auth)
-      data = auth.info
-      user = User.where(:email => data["email"]).first
-
-      unless user
-        password = Devise.friendly_token[0,20]
-        user = User.create(name: data["name"], email: data["email"],
-          password: password, password_confirmation: password
-          )
-      end
-      user
-    end
-
-    def full_name
-      first_name + " " + last_name rescue "Guest user"
-    end
   end

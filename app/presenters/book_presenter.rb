@@ -2,13 +2,10 @@ class BookPresenter < BasePresenter
 	presents :book
 	delegate :ratings, to: :book
 	delegate :reviews, to: :book
+	delegate :average_rating, to: :book
 	
 	def title
 		book.title.camelize rescue nil
-	end
-
-	def average_rating		
-		@object.ratings.sum(:score) / @object.ratings.size
 	end
 
 	def reviews

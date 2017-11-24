@@ -7,6 +7,17 @@ class UsersController < ApplicationController
 	def show		
 	end
 
+	def download_report	
+		download_book_report = Report.new(current_user, 'book').download
+		if download_book_report.result == 'success'
+			books = download_book_report.books
+			p download_book_report.books
+			send_data books.to_csv
+		else
+			render plain: "Download fail"
+		end	
+	end
+
 	private
 
 	def user_params

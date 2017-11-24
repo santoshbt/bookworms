@@ -1,4 +1,10 @@
 <div class="main">
+	<% if user_is_admin? %>
+		<%= link_to download_report_user_path(current_user.id), class: "btn btn-default" do %>
+		    <i class="glyphicon glyphicon-download"></i> Download Report
+		<% end %> <br /><br />
+	<% end %> 
+
 	<div class="jumbotron">
 		<h1> Welcome to BookWorms Store</h1>
 	</div>

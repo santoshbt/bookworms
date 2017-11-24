@@ -14,7 +14,11 @@ Rails.application.routes.draw do
   end
 
   resources :ratings, only: :update
-  resources :users, only: [:edit, :show]  
+  resources :users, only: [:edit, :show] do
+    member do
+      get 'download_report'
+    end
+  end  
 
   get 'search', to: 'search#show'
   post 'search/content', to: 'search#search_content'
