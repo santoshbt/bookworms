@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Book, type: :model do
   	describe 'creation' do
 		before do						
-			@genre = FactoryGirl.create(:genre)
+			@genre = FactoryBot.create(:genre)
 			@book = Book.create(title: "My Comedy Series", author_name: "Jon Paul", genre_id: @genre.id)
 		end
 

@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :rating do
     book nil
     user nil

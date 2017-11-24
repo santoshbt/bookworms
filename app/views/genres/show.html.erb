@@ -1,6 +1,5 @@
-<br />
+<div class="main">
+	<p><%= @genre.name %></p>
 
-
-<%= @genre.name %>
-<%= link_to "View Books", genre_books_path(genre_id: @genre.id) %>
-
+	<p><span class=="edit_btn"><%= link_to "View Books", genre_books_path(genre_id: @genre.id) %></span></p>
+</div>

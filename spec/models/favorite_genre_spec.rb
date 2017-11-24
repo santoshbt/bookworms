@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Genre, type: :model do
 	before do		
-		@user = FactoryGirl.create(:user)
+		@user = FactoryBot.create(:user)
 	end
 
 	describe 'mark genre as favorite' do		

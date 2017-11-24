@@ -17,7 +17,7 @@ describe 'navigate' do
 		#### Not able to test the ajax request. Throwing unsupported format error.
 
 		# it 'user click the link Mark Favorite' do
-		# 	user = FactoryGirl.create(:user)	
+		# 	user = FactoryBot.create(:user)	
 		# 	login_as(user, scope: :user)
 
 		# 	genre_to_mark_favorite = Genre.create(name: 'Fiction', description: 'Fictitious books')
@@ -37,7 +37,7 @@ describe 'navigate' do
   		end
 
 		it 'has a form that cannot be reached by normal user' do	
-			user = FactoryGirl.create(:user)	
+			user = FactoryBot.create(:user)	
 			login_as(user, scope: :user)	
 			visit(new_genre_path)
 
@@ -45,7 +45,7 @@ describe 'navigate' do
 		end  		
 
 		it 'has a form that can be reached by adminuser' do	
-			admin_user = FactoryGirl.create(:admin_user)	
+			admin_user = FactoryBot.create(:admin_user)	
 			login_as(admin_user, scope: :user)	
 			visit(new_genre_path)
 

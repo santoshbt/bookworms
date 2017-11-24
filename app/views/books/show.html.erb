@@ -1,41 +1,38 @@
-<h3><%= @book.title %> </h3>
+<% present @book do |book_presenter| %>
+	<h3><%= book_presenter.title %> </h3>
 
-<p>Averate rating</p>
-<div id="star"></div>
+	<hr />
+	<p>Averate rating</p>
+	<div id="star"></div>
 
-<p>Your rating</p>
-<div id="user_star"></div>
+	<p>Your rating</p>
+	<div id="user_star"></div>
 
-<p>
-<%= link_to "Add Review", new_genre_book_review_path(@book.genre.id, @book.id) %>
-</p>
+	<br />
+	
+	<%= link_to "Add Review", new_genre_book_review_path(@book.genre.id, @book.id), 
+							class: "label label-success" %>	
+	<br /><br />
 
-<% unless @book.reviews.blank? %>
-	<% @book.reviews.each do |book_review| %>
-		<div class="reviews" id="review_<%=book_review.title%>">
-			<%= link_to book_review.title, genre_book_review_path(@book.genre.id, @book.id, book_review.id) %> 
-			<br />
-			<%= book_review.description %> <br /><hr /><br />
-		</div>
-	<% end %>
+	<%= book_presenter.reviews %>
+
+	<script type="text/javascript">
+		$('#star').raty({
+			readOnly: true,
+			score: <%= book_presenter.average_rating %>,
+			path: '/assets'
+		});
+
+		$('#user_star').raty({
+			score: <%= @rating.score %>,
+			path: '/assets',
+			click: function(score, evt) {
+				$.ajax({
+					url: '/ratings/' + <%= @rating.id %>,
+					type: 'PATCH',
+					data: { score: score }
+				});
+			}
+		});
+	</script>
 <% end %>
-
-<script type="text/javascript">
-	$('#star').raty({
-		readOnly: true,
-		score: <%= @book.average_rating %>,
-		path: '/assets'
-	});
-
-	$('#user_star').raty({
-		score: <%= @rating.score %>,
-		path: '/assets',
-		click: function(score, evt) {
-			$.ajax({
-				url: '/ratings/' + <%= @rating.id %>,
-				type: 'PATCH',
-				data: { score: score }
-			});
-		}
-	});
-</script>

@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe Genre, type: :model do
 	describe 'creation' do
 		before do
-			@genre = FactoryGirl.create(:genre)
-			@book = FactoryGirl.create(:book)
+			@genre = FactoryBot.create(:genre)
+			@book = FactoryBot.create(:book)
 		end
 		it 'can be created' do			
 			expect(@genre).to be_valid

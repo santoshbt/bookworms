@@ -3,9 +3,9 @@ require 'rails_helper'
 describe 'navigate' do
 	describe 'create' do		
 		it 'Admin can create book successfully' do						
-			admin_user = FactoryGirl.create(:admin_user)	
+			admin_user = FactoryBot.create(:admin_user)	
 			login_as(admin_user, scope: :user)
-			genre = FactoryGirl.create(:genre)
+			genre = FactoryBot.create(:genre)
 			visit genres_path
 			click_link("Add Books")
 
@@ -20,9 +20,9 @@ describe 'navigate' do
 
 	# describe 'index' do
 	# 	it 'user can reach the list of books' do
-	# 		user = FactoryGirl.create(:user)
+	# 		user = FactoryBot.create(:user)
 	# 		login_as(user)
-	# 		genre = FactoryGirl.create(:genre)
+	# 		genre = FactoryBot.create(:genre)
 	# 		visit genres_path
 
 	# 		click_link("Comedy")
@@ -30,7 +30,7 @@ describe 'navigate' do
 	# 		expect(page).to have_content("Comedy")
 
 	# 		click_link("View Books")
-	# 		book = FactoryGirl.create(:book)
+	# 		book = FactoryBot.create(:book)
 			
 	# 		expect(page.status_code).to eq(200)
 	# 		expect(page).to have_content("My Comedy Series")

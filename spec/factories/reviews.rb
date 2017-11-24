@@ -1,4 +1,4 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :review do
     title "MyString"
     description "MyText"

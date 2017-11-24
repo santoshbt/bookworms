@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Review, type: :model do
   describe 'creation' do
   	before do
-		@book = FactoryGirl.create(:book)
+		@book = FactoryBot.create(:book)
 		@user = User.create(email: 'test@test.com', password: 'asdfasdf', 
 								password_confirmation: 'asdfasdf', first_name: 'John', last_name:'Snow')
 	end

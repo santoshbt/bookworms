@@ -1,10 +1,12 @@
-<%= form_for @genre do |f| %> 
-	<%= f.label :name %>
-	<%= f.text_field :name %>
+<div class="form-group col-xs-4">
+	<%= form_for @genre do |f| %> 
+		<%= f.label :name %>
+		<%= f.text_field :name, class: "form-control"  %>
+		<br />
+		<%= f.label :description %>
+	    <%= f.text_area :description, class: "form-control"  %>
+	  	<br />
+	  <%= f.submit 'Save', class: "btn btn-success" %>
 
-	<%= f.label :description %>
-    <%= f.text_area :description %>
-  
-  <%= f.submit 'Save' %>
-
-<% end %>
+	<% end %>
+</div>
