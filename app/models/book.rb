@@ -8,4 +8,10 @@ class Book < ApplicationRecord
 	# after_save ThinkingSphinx::RealTime.callback_for(:book)
 	include Ratable
 	include Downloadable
+
+	def cached_reviews
+		Rails.cache.fetch([self.class.name, updated_at.to_i, :reviews], expires_in: 240.hours) {
+			reviews.to_a
+		}
+	end
 end

@@ -23,7 +23,8 @@ class BooksController < ApplicationController
 
 	def show 
 		@book = Book.find_by_id params[:id]
-		@book_reviews = @book.reviews
+		# @book_reviews = @book.reviews
+		@book_reviews = @book.cached_reviews
 		@rating = Rating.where(book_id: @book.id, user_id: current_user.id).first
 		unless @rating
 		  @rating = Rating.create(book_id: @book.id, user_id: current_user.id, score: 0)
