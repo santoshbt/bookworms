@@ -29,7 +29,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
-gem "rb-inotify", "~> 0.9.0"
+# gem "rb-inotify", "~> 0.9.0"
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # Use Redis adapter to run Action Cable in production
@@ -40,6 +40,12 @@ gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'thinking-sphinx'
+
+group :development do
+  gem 'rb-inotify', :require => false
+  gem 'rb-fsevent', :require => false
+  gem 'rb-fchange', :require => false
+end
 
 group :development, :test do
   gem 'byebug'
@@ -59,7 +65,7 @@ group :development do
   gem "guard", ">= 2.2.2", :require => false
   gem "guard-livereload",  :require => false
   gem "rack-livereload"
-  gem "rb-fsevent",        :require => false
+  # gem "rb-fsevent",        :require => false
 end
 
 
