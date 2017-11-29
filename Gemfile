@@ -29,7 +29,7 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
-gem "rb-inotify", "~> 0.9.0"
+#gem "rb-inotify", "~> 0.9.0"
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
 # Use Redis adapter to run Action Cable in production
@@ -73,3 +73,4 @@ gem 'omniauth-google-oauth2'
 gem 'activerecord-session_store', github: 'rails/activerecord-session_store'
 gem "paperclip", "~> 5.0.0"
 gem "pundit"
+gem "dalli"

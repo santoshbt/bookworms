@@ -81,6 +81,7 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.2)
+    dalli (2.7.6)
     database_cleaner (1.6.2)
     devise (4.3.0)
       bcrypt (~> 3.0)
@@ -316,6 +317,7 @@ DEPENDENCIES
   byebug
   capybara
   coffee-rails (~> 4.2)
+  dalli
   database_cleaner
   devise
   factory_bot_rails (~> 4.7)
@@ -335,7 +337,6 @@ DEPENDENCIES
   rack-livereload
   rails (~> 5.0.2)
   rb-fsevent
-  rb-inotify (~> 0.9.0)
   rspec-rails (~> 3.0)
   sass-rails (~> 5.0)
   spring
