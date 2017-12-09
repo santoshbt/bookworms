@@ -1,8 +1,3 @@
-MOdels
-- User
-- Post
-- Book
-- Genre
 
 Completed
 
@@ -19,9 +14,10 @@ Completed
 10 - User can see other's profiles
 11 - Upload user profile pic
 12 - Search Books, based on title, author name, genre -> Used Thinking Sphinx
+13 - Need to add bootstrap
 
-To Do    
 
-Need to add bootstrap
+
+
 
 
